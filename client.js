@@ -17,7 +17,12 @@ const connect = function () {
   // register another event handler for the connect event
   conn.on("connect", () => {
     conn.write("Name: KAR");
-//    conn.write("Move: up");
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 1000);
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 500);
 
     console.log("Successfully connected to game server");
   }));
@@ -29,8 +34,3 @@ console.log("Connecting ...");
 connect();
 
 module.exports = { connect };
-
-// tried adding setinterval but this is not the correct way
-// conn.write(setInterval(() => {
-//   process.stdout.write("Move:up");
-// }, 2000))
